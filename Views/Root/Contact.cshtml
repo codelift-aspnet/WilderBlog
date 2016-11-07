@@ -1,0 +1,35 @@
+﻿@{
+  ViewBag.Title = "Shawn Wildermuth's Rants and Raves";
+  ViewBag.PageName = "Contact Me";
+  ViewBag.PageBlurb = "Send a Message to Shawn Wildermuth";
+  ViewBag.PageImage = "/img/headers/about.jpg";
+}
+@section Scripts {
+  <environment names="Development">
+    <script src="~/lib/core-js/shim.js"></script>
+    <script src="~/lib/zone.js/zone.js"></script>
+    <script src="~/lib/reflect-metadata/Reflect.js"></script>
+    <script src="~/lib/systemjs/system.src.js"></script>
+
+    <script src="~/app/systemjs.config.js"></script>
+  </environment>
+  <environment names="Production,Staging">
+    <!-- IE required polyfills, in this exact order -->
+    <script src="~/lib/core-js/shim.min.js"></script>
+    <script src="~/lib/zone.js/zone.min.js"></script>
+    <script src="~/lib/reflect-metadata/Reflect.js"></script>
+    <script src="~/lib/systemjs/system.js"></script>
+
+    <script src="~/lib/site/app.bundle.min.js"></script>
+  </environment>
+  <script>
+    System.import('./app/main')
+          .then(null, console.error.bind(console));
+  </script>
+}
+<div class="row">
+  <div class="offset-lg-3 col-lg-6">
+    <contact-form><div style="text-align: center;"><i class="fa fa-rebel fa-spin fa-lg"></i></div></contact-form>
+  </div>
+</div>
+<hr/>
